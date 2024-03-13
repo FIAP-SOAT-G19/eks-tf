@@ -1,5 +1,5 @@
 resource "aws_internet_gateway" "eks_ig" {
-  vpc_id = aws_vpc.eks_vpc.id
+  vpc_id = var.vpcId
 
   tags = {
     Name = format("%s-internet-gateway", var.cluster_name)
@@ -7,7 +7,7 @@ resource "aws_internet_gateway" "eks_ig" {
 }
 
 resource "aws_route_table" "eks_public_rt" {
-  vpc_id = aws_vpc.eks_vpc.id
+  vpc_id = var.vpcId
 
   route {
     cidr_block = "0.0.0.0/0"
