@@ -15,7 +15,6 @@ variable "subnet03" {
   default     = "subnet-0927648c135b99e3b"
 }
 
-
 variable "private_subnet_1a" {}
 
 variable "private_subnet_1b" {}
