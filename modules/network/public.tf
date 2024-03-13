@@ -1,29 +1,29 @@
-resource "aws_subnet" "eks_subnet_public_1a" {
+#resource "aws_subnet" "eks_subnet_public_1a" {
 
-  vpc_id                  = var.vpcId
-  cidr_block              = var.vpcCIDR
-  availability_zone       = format("%sa", var.region)
-  map_public_ip_on_launch = true
+#  vpc_id                  = var.vpcId
+#  cidr_block              = var.vpcCIDR
+#  availability_zone       = format("%sa", var.region)
+#  map_public_ip_on_launch = true
 
-  tags = {
-    Name                                        = format("%s-subnet-public-1a", var.cluster_name)
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-  }
+#  tags = {
+#    Name                                        = format("%s-subnet-public-1a", var.cluster_name)
+#    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+#  }
 
-}
+#}
 
-resource "aws_subnet" "eks_subnet_public_1b" {
-  vpc_id                  = var.vpcId
-  cidr_block              = var.vpcCIDR
-  availability_zone       = format("%sb", var.region)
-  map_public_ip_on_launch = true
+#resource "aws_subnet" "eks_subnet_public_1b" {
+#  vpc_id                  = var.vpcId
+#  cidr_block              = var.vpcCIDR
+#  availability_zone       = format("%sb", var.region)
+#  map_public_ip_on_launch = true
 
-  tags = {
-    Name                                        = format("%s-subnet-public-1b", var.cluster_name)
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-  }
+#  tags = {
+#    Name                                        = format("%s-subnet-public-1b", var.cluster_name)
+#    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+#  }
 
-}
+#}
 
 #resource "aws_route_table_association" "eks_public_rt_association_1a" {
 #  subnet_id      = aws_subnet.eks_subnet_public_1a.id
