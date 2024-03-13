@@ -1,6 +1,6 @@
 resource "aws_subnet" "eks_subnet_private_1a" {
 
-  vpc_id            = aws_vpc.eks_vpc.id
+  vpc_id            = var.vpcId
   cidr_block        = "10.0.1.0/24"
   availability_zone = format("%sa", var.region)
 
@@ -13,7 +13,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
 
 resource "aws_subnet" "eks_subnet_private_1b" {
 
-  vpc_id            = aws_vpc.eks_vpc.id
+  vpc_id            = var.vpcId
   cidr_block        = "10.0.2.0/24"
   availability_zone = format("%sb", var.region)
 

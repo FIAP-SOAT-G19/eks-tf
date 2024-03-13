@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = aws_vpc.eks_vpc.id
+  value = var.vpcId
 }
 
 output "private_subnet_1a" {

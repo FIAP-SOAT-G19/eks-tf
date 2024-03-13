@@ -15,7 +15,7 @@ resource "aws_nat_gateway" "eks_nat_gw" {
 }
 
 resource "aws_route_table" "eks_nat_rt" {
-  vpc_id = aws_vpc.eks_vpc.id
+  vpc_id = var.vpcId
 
   route {
     cidr_block     = "0.0.0.0/0"
