@@ -1,7 +1,7 @@
 resource "aws_subnet" "eks_subnet_public_1a" {
 
   vpc_id                  = var.vpcId
-  cidr_block              = "10.0.3.0/24"
+  cidr_block              = var.vpcCIDR
   availability_zone       = format("%sa", var.region)
   map_public_ip_on_launch = true
 
@@ -14,7 +14,7 @@ resource "aws_subnet" "eks_subnet_public_1a" {
 
 resource "aws_subnet" "eks_subnet_public_1b" {
   vpc_id                  = var.vpcId
-  cidr_block              = "10.0.4.0/24"
+  cidr_block              = var.vpcCIDR
   availability_zone       = format("%sb", var.region)
   map_public_ip_on_launch = true
 

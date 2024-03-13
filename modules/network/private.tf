@@ -1,7 +1,7 @@
 resource "aws_subnet" "eks_subnet_private_1a" {
 
   vpc_id            = var.vpcId
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = var.vpcCIDR
   availability_zone = format("%sa", var.region)
 
   tags = {
@@ -14,7 +14,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
 resource "aws_subnet" "eks_subnet_private_1b" {
 
   vpc_id            = var.vpcId
-  cidr_block        = "10.0.2.0/24"
+  cidr_block        = var.vpcCIDR
   availability_zone = format("%sb", var.region)
 
   tags = {
